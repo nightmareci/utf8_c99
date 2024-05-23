@@ -93,7 +93,7 @@ int utf8_decode(uint32_t* const codepoint, const char* const str) {
 
 int utf8_encode(char* const str, const uint32_t codepoint, char* const str_end) {
 	// Validate parameters
-	if ((str != NULL && str_end == NULL) || (str == NULL && str_end != NULL) || str_end <= str) {
+	if ((str != NULL && str_end == NULL) || (str == NULL && str_end != NULL) || (str != NULL && str_end != NULL && str_end <= str)) {
 		return -1;
 	}
 
